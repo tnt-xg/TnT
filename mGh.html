@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h1>你能举多高？</h1>
+<br>输入物体质量（千克）</br>
+<input type="text" id="m">
+<br>输入重力环境（地球为1G）</br>
+<input type="text" id="G">
+<br>输入高度（米）</br>
+<input type="text" id="h">
+<br>输入要举起的物体的名称（可以不填）</br>
+<input type="text" id="name">
+<br/>
+<input type="button" onclick="back()" value="计算">
+<p id="result"></p>
+<script type="text/javascript">
+alert("onload")
+function back() {
+  var m = document.getElementById('m').value;
+  var G = document.getElementById('G').value;
+  var h = document.getElementById('h').value;
+  var name = document.getElementById('name').value;
+  var zG = G * 9.8
+  var mG = m * zG;
+  var mGh = mG * h;
+  document.getElementById('result').innerHTML="把"+name+"举起"+h+"米需要消耗"+mGh+"焦耳能量，这些能量可以在一个大气压下用1秒把1克水加热到"+mGh+"摄氏度。";
+}
+</script>
+</body>
+</html>
