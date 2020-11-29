@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+</head>
+<body>
+<h1>你能举多高？</h1>
+<br>输入物品名称</br>
+<input type="text" id="name">
+<br>输入你最多可以做多少功（瓦&#160;成年人平均为52瓦。）</br>
+<input type="text" id="J">
+<br>输入重力环境（地球为1G）</br>
+<input type="text" id="G">
+<br>输入物品<b>质量</b>（千克）</br>
+<input type="text" id="m">
+<br>输入时间（秒）</br>
+<input type="text" id="t">
+<br/>
+<input type="button" onclick="back()" value="&#160;计算&#160;">
+<p id="result"></p>
+<script type="text/javascript">
+function back() {
+  var G = document.getElementById('G').value;
+  var J = document.getElementById('J').value;
+  var name = document.getElementById('name').value;
+  var m = document.getElementById('m').value;
+  var t = document.getElementById('t').value;
+  var Gm = G * m;
+  var JcGm = J / Gm
+  var JcGmt = JcGm * t
+  var result = JcGmt / 10
+  document.getElementById('result').innerHTML="在"+G+"G重力下，你最多可以把一个"+m+"千克的"+name+"举起"+result+"米。";
+}
+</script>
+</body>
+</html>
+
